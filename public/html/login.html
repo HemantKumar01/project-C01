@@ -5,17 +5,52 @@
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Login
-        </title>
-    </head>
-    <body>
-        <h1>Login</h1>
-        <a href="/">Home</a>
-        <form method="POST">
-            <label for="username">Username: </label>
-            <input name="username" id="username" />
-        </form>
-    </body>
+  <head>
+    <meta name="theme-color" content="#363c40" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login</title>
+    <link rel="stylesheet" href="public/css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="public/css/login.css" />
+  </head>
+  <body>
+    <header class="flexbox">
+      <a href="/" id="home-link"
+        ><i class="fa-solid fa-house" aria-hidden="true"></i
+      ></a>
+      <h1>Login</h1>
+    </header>
+
+    <form method="POST" id="login" class="flexbox">
+      <div class="input-container">
+        <label for="username">Username: </label>
+        <input name="username" id="username" required />
+      </div>
+      <div class="input-container">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+      </div>
+      <input type="submit" value="Login" />
+      <a href="" id="register-link"
+        >does not have an account?<br />
+        register here</a
+      >
+    </form>
+
+    <div id="background-design">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill-opacity="1"
+          d="M0,192L60,192C120,192,240,192,360,208C480,224,600,256,720,234.7C840,213,960,139,1080,90.7C1200,43,1320,21,1380,10.7L1440,0L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+  </body>
 </html>

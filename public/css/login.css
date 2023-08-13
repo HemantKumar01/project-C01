@@ -1,0 +1,45 @@
+form#login {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem;
+  z-index: 10;
+
+  width: 85%;
+  max-width: 500px;
+  color: #a2ffe8;
+
+  background-color: #2f3e47;
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+}
+form#login input[type="submit"] {
+  margin-top: 2em;
+}
+
+form#login a#register-link {
+  font-size: 0.8em;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  color: white !important;
+}
+
+#background-design {
+  position: fixed;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+#background-design svg {
+  fill: var(--accent-clr);
+}
+#background-design svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
