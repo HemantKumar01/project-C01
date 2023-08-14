@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="public/css/main.css" />
 
     <link
@@ -28,9 +28,8 @@
       <h1>Logo</h1>
     </header>
 
-    <form method="POST" id="login" class="flexbox">
-      <h1>Login</h1>
-
+    <form method="POST" id="register" class="flexbox">
+      <h1>Register</h1>
       <div class="input-container">
         <label for="email">Email: </label>
         <input type="email" name="email" id="email" required />
@@ -39,13 +38,14 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required />
       </div>
-      <input type="submit" value="Login" />
-      <!-- <a href="/register" id="register-link"
-        >do not have an account?<br />
-        register here</a
-      > -->
+      <div class="input-container">
+        <label for="cnfpassword">Confirm Password</label>
+        <input type="password" name="cnfpassword" id="cnfpassword" required />
+        <p id="password-matching"></p>
+      </div>
+      <input type="submit" value="Register" />
       <hr class="or" />
-      <a href="/register" class="login-flow">Register</a>
+      <a href="/login" class="login-flow">Login</a>
     </form>
 
     <div id="background-design">
@@ -57,6 +57,6 @@
       </svg>
     </div>
     <script src="/public/js/firebase.js"></script>
-    <script src="/public/js/login.js"></script>
+    <script src="/public/js/register.js"></script>
   </body>
 </html>

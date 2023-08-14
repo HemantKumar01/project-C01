@@ -1,0 +1,27 @@
+{
+  "name": "project-c01",
+  "version": "1.0.0",
+  "description": "Run with ```node app.js```",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjalkole/project-c01.git"
+  },
+  "author": "PranjalKole, HemantKumar",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/pranjalkole/project-c01/issues"
+  },
+  "homepage": "https://github.com/pranjalkole/project-c01#readme",
+  "dependencies": {
+    "firebase": "^10.1.0",
+    "webpack": "^5.88.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}

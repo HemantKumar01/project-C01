@@ -1,24 +1,27 @@
-form#login {
+form {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: calc(60px + 3em);
+  transform: translate(-50%, 0%);
   padding: 3rem;
+  padding-top: 1rem;
   z-index: 10;
 
   width: 85%;
   max-width: 500px;
   color: #a2ffe8;
 
-  background-color: #2f3e47;
+  background-color: #314653;
   backdrop-filter: blur(10px);
   border-radius: 30px;
 }
-form#login input[type="submit"] {
-  margin-top: 2em;
+form input[type="submit"],
+a.login-flow {
+  margin-block: 1em;
 }
 
-form#login a#register-link {
+form a#register-link,
+form a#login-link {
   font-size: 0.8em;
   display: block;
   width: 100%;
@@ -42,4 +45,28 @@ form#login a#register-link {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+#password-matching {
+  width: 100%;
+  text-align: center;
+  color: #2fff63;
+}
+#password-matching.error {
+  color: rgb(255, 104, 58);
+}
+hr.or::after {
+  background-color: #314653 !important;
+  color: white;
+}
+a.login-flow {
+  display: block;
+  text-decoration: none;
+  border: 2px solid var(--accent-clr);
+  color: var(--accent-clr);
+  background-color: transparent;
+  transition: 0.5s;
+}
+a.login-flow:hover {
+  background-color: var(--accent-clr);
+  color: var(--theme-clr);
 }

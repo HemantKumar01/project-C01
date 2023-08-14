@@ -8,6 +8,7 @@ const fs = require("fs");
 // Routes
 const indexRoute = require("./routes/index.js");
 const loginRoute = require("./routes/login.js");
+const registerRoute = require("./routes/register.js");
 const already_logged_in = require("./routes/already_logged_in.js");
 const _404Route = require("./routes/404.js");
 
@@ -16,6 +17,9 @@ const PORT = process.env.PORT || 8000;
 //listing css files
 const css_files = fs.readdirSync("./public/css/").map((file) => {
   return "/public/css/" + file;
+});
+const js_files = fs.readdirSync("./public/js/").map((file) => {
+  return "/public/js/" + file;
 });
 
 const server = http.createServer(async (req, res) => {
@@ -29,14 +33,16 @@ const server = http.createServer(async (req, res) => {
   if (req.method === "GET") {
     if (req.url === "/" || req.url === "/index.html") {
       indexRoute.handle(res);
-    } else if (req.url === "/login.html") {
+    } else if (req.url === "/login") {
       if ("cookie" in req.headers) {
         console.log(req.headers);
         already_logged_in.handle(res);
       }
       loginRoute.handle(res);
-    } else if (req.url === "/public/js/index.js") {
-      fs.readFile("./public/js/index.js", (err, js) => {
+    } else if (req.url === "/register") {
+      registerRoute.handle(res);
+    } else if (js_files.includes(req.url)) {
+      fs.readFile("." + req.url, (err, js) => {
         if (err) {
           throw err;
           return;

@@ -5,7 +5,7 @@
 const fs = require("fs");
 
 function handle(res) {
-  fs.readFile("./public/html/login.html", (err, html) => {
+  fs.readFile("./public/html/register.html", (err, html) => {
     if (err) {
       throw err;
       return;
