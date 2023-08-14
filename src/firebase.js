@@ -24,6 +24,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendEmailVerification,
 } from "firebase/auth";
 
 const auth = getAuth();
@@ -35,6 +36,18 @@ export function registerUser(email, password) {
       // Signed in
       const user = userCredential.user;
       console.log("Registered:", user);
+
+      sendEmailVerification(auth.currentUser).then(() => {
+        // Email verification sent!
+        // ...
+        console.log("Verification Email Sent");
+        var userRegisteredEvent = new CustomEvent("email-verification-sent", {
+          email: email,
+        });
+
+        // Dispatch/Trigger/Fire the event
+        document.dispatchEvent(userRegisteredEvent);
+      });
       // ...
     })
     .catch((error) => {
@@ -53,6 +66,7 @@ export function signInUser(email, password) {
       // Signed in
       const user = userCredential.user;
       console.log("Signed In:", user);
+
       // ...
     })
     .catch((error) => {

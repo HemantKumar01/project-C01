@@ -29,23 +29,48 @@
     </header>
 
     <form method="POST" id="register" class="flexbox">
-      <h1>Register</h1>
-      <div class="input-container">
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email" required />
+      <div class="container flexbox">
+        <h1>Register</h1>
+        <div class="input-container">
+          <label for="email">Email: </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="input-container">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+        <div class="input-container">
+          <label for="cnfpassword">Confirm Password</label>
+          <input type="password" name="cnfpassword" id="cnfpassword" required />
+          <p id="password-matching"></p>
+        </div>
+        <input type="submit" value="Register" />
+        <hr class="or" />
+        <a href="/login" class="login-flow">Login</a>
       </div>
-      <div class="input-container">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
+
+      <!-- spinner for loading state -->
+      <div class="loader" style="display: none">
+        <div class="spinner"></div>
       </div>
-      <div class="input-container">
-        <label for="cnfpassword">Confirm Password</label>
-        <input type="password" name="cnfpassword" id="cnfpassword" required />
-        <p id="password-matching"></p>
+      <!-- below to be shown once verification email is sent successfully -->
+      <div class="success" style="display: none">
+        <div class="illustration">
+          <!-- adding an animated free illustration -->
+          <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+          <lord-icon
+            src="https://cdn.lordicon.com/iepbfivp.json"
+            trigger="loop"
+            delay="500"
+            colors="primary:#ffffff,secondary:#00ffbf,tertiary:#ebe6ef"
+            style="width: 250px; height: 250px"
+          >
+          </lord-icon>
+        </div>
+        <div class="text">
+          Email Verification Link Sent Successfully. Please Check Your Email.
+        </div>
       </div>
-      <input type="submit" value="Register" />
-      <hr class="or" />
-      <a href="/login" class="login-flow">Login</a>
     </form>
 
     <div id="background-design">

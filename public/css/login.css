@@ -1,4 +1,6 @@
 form {
+  overflow: hidden;
+
   position: absolute;
   left: 50%;
   top: calc(60px + 3em);
@@ -14,6 +16,13 @@ form {
   background-color: #314653;
   backdrop-filter: blur(10px);
   border-radius: 30px;
+}
+form .loader {
+  background: #314653;
+}
+form .loader .spinner {
+  border-top-color: #314653;
+  border-bottom-color: #314653;
 }
 form input[type="submit"],
 a.login-flow {
@@ -69,4 +78,10 @@ a.login-flow {
 a.login-flow:hover {
   background-color: var(--accent-clr);
   color: var(--theme-clr);
+}
+
+form .success .text {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 500;
 }

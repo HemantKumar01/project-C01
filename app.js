@@ -69,8 +69,9 @@ const server = http.createServer(async (req, res) => {
   } else if (req.method === "POST") {
     req.on("data", (chunk) => {
       console.log(`Received data: ${chunk}`);
-      res.writeHead(303, { Location: "/", "Set-Cookie": chunk });
-      res.end();
+      //firebase manages login cookies automatically and keeps them in sync with database
+      // res.writeHead(303, { Location: "/", "Set-Cookie": chunk });
+      // res.end();
     });
     req.on("end", () => {
       console.log("POST data ended");
